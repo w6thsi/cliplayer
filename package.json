@@ -1,0 +1,17 @@
+{
+  "name": "cliplayer",
+  "version": "0.0.1",
+  "description": "CLI Music Player",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Wathsala Werapitiya <wathsala@wathsala.co.uk>",
+  "license": "MIT",
+  "dependencies": {
+    "jfs": "^0.2.6"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.4"
+  }
+}
