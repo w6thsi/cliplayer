@@ -1,4 +1,4 @@
-var assert = require('assert'),
+var expect = require('chai').expect,
     commands = require('../commands'),
     User = require('../User').User;
 
@@ -22,15 +22,16 @@ describe('Commands', function() {
   describe('play#run()', function () {
     it('should play song', function () {
       var mockUser = _createMockUser();
-      assert.equal('Playing Rock and roll', (new commands['play'](mockUser)).run('Rock and roll'));
-      assert.equal('Playing Comfortably numb', (new commands['play'](mockUser)).run('Comfortably numb'));
+
+      expect((new commands['play'](mockUser)).run('Rock and roll')).to.equal('Playing Rock and roll');
+      expect((new commands['play'](mockUser)).run('Comfortably numb')).to.equal('Playing Comfortably numb');
     });
   });
 
   describe('listened#run()', function () {
     it('should show played song', function () {
       var mockUser = _createMockUser();
-      assert.equal('Listened to Born to be wild', (new commands['listened'](mockUser)).run());
+      expect((new commands['listened'](mockUser)).run()).to.equal("Listened to Gimmie Shelter\nListened to Born to be wild");
     });
   });
 });

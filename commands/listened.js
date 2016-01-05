@@ -9,7 +9,7 @@ var Listened = function (user) {
     if (this.user.played.length===0) {
       return '';
     }
-    return 'Listened to ' + this.user.played[this.user.played.length - 1];
+    return 'Listened to ' + this.user.played.join("\nListened to ");
   }
 }
 Listened.prototype = Command.prototype;

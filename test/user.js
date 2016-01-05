@@ -1,4 +1,4 @@
-var assert = require('assert'),
+var expect = require('chai').expect,
     User = require('../user').User;
 
 describe('User', function() {
@@ -21,16 +21,16 @@ describe('User', function() {
   describe('#play()', function () {
     it('should play song', function () {
       var user = _createMockUser();
-      assert.equal('Born to be wild', user.play('Born to be wild').played[0]);
-      assert.equal('Gimmie Shelter', user.play('Gimmie Shelter').played[1]);
+      expect(user.play('Born to be wild').played[0]).to.equal('Born to be wild');
+      expect(user.play('Gimmie Shelter').played[1]).to.equal('Gimmie Shelter');
     });
   });
 
   describe('#follow()', function () {
     it('should follow user', function () {
       var user = _createMockUser();
-      assert.equal('Brian', user.follow('Brian').following[0]);
-      assert.equal('Terry', user.follow('Terry').following[1]);
+      expect(user.follow('Brian').following[0], 'Brian');
+      expect(user.follow('Terry').following[1], 'Terry');
     });
   });
 });
