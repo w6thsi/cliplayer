@@ -6,7 +6,10 @@ var Listened = function (user) {
   Command.call(this, 'listened', user);
 
   this.run = function () {
-    return 'Listened to ' + this.user.played[this.user.played.length-1];
+    if (this.user.played.length===0) {
+      return '';
+    }
+    return 'Listened to ' + this.user.played[this.user.played.length - 1];
   }
 }
 Listened.prototype = Command.prototype;
